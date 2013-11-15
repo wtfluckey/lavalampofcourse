@@ -16,7 +16,7 @@
 @import "bourbon";
 @import "neat";
 
-$bubble-color: #34b8b6;
+$bubble-color: #333;
 
 .lavalamp {
   margin: 20px;
@@ -36,11 +36,32 @@ $bubble-color: #34b8b6;
   top: 31px;
   width: 116px;
   height: 115px;
-  background-color: #7EEBE9;
+  @include animation(color_change 15s infinite);
+}
+
+@include keyframes(color_change) {
+  0% { 
+    background-color: #7eebe9;
+  }
+  20% {
+    background-color: #a1eb7e;
+  }
+  40% {
+    background-color: #ebe27e;
+  }
+  60% { 
+    background-color: #eb7e7e;
+  }
+  80% {
+    background-color: #eb7ead;
+  }
+  100% {
+    background-color: #7eebe9;
+  }
 }
 
 .bubble {
-  background-color: rgba($bubble-color, .8);
+  background-color: rgba($bubble-color, 1);
   position: absolute;
   bottom: -35px;
   left: 35px;
@@ -87,7 +108,7 @@ $bubble-color: #34b8b6;
   left: 75px;
   top: 10px;
   @include animation-name(top_bubble);
-  @include animation-duration(25s);
+  @include animation-duration(30s);
 }
 
 .bubble6 {
@@ -103,7 +124,7 @@ $bubble-color: #34b8b6;
   top: -15px;
   left: 35px;
   @include animation-name(top_bubble);
-  @include animation-duration(27s);
+  @include animation-duration(37s);
 }
 
 
