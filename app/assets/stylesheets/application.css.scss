@@ -36,7 +36,7 @@ $bubble-color: #333;
   top: 31px;
   width: 116px;
   height: 115px;
-  @include animation(color_change 15s infinite);
+  @include animation(color_change 30s infinite);
 }
 
 @include keyframes(color_change) {
