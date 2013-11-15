@@ -92,7 +92,7 @@ $bubble-color: #34b8b6;
 
 .bubble6 {
   @include size(27);
-  top: 10px;
+  top: -20px;
   left: 35px;
   @include animation-name(top_bubble);
   @include animation-duration(25s);
@@ -100,7 +100,7 @@ $bubble-color: #34b8b6;
 
 .bubble7 {
   @include size(23);
-  top: 5px;
+  top: -15px;
   left: 35px;
   @include animation-name(top_bubble);
   @include animation-duration(27s);
@@ -133,7 +133,7 @@ $bubble-color: #34b8b6;
     @include transform(translateY(50px) translateX(-15px) scaleX(1.2));
   }
   50% {
-    @include transform(translateY(120px) scaleX(.9));
+    @include transform(translateY(180px) translateX(13px) scaleX(.9));
   }
   100% {
     @include transform(translateY(0px) scaleX(.7));
