@@ -162,7 +162,10 @@ $bubble-color: #fFFFFF;
 }
 
 .navbar {
+  @include outer-container;
+  @include span-columns(6);
+  @include shift(3);
   width: 500px;
-  float: right;
   text-align: center;
 }
+
