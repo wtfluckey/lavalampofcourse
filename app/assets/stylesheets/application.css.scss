@@ -1,0 +1,168 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require normalize-rails
+ *= require_tree .
+ */
+
+@import "bourbon";
+@import "neat";
+
+$bubble-color: #333;
+
+.lavalamp {
+  margin: 20px;
+  position: relative;
+}
+
+.lavalamp_outer {
+  position: absolute;
+  @include retina-image(lavalamp, 100%);
+  @include size(120 250);
+  z-index: 1;
+}
+
+.lavalamp_inner {
+  overflow: hidden;
+  position: absolute;
+  top: 31px;
+  width: 116px;
+  height: 115px;
+  @include animation(color_change 30s infinite);
+}
+
+@include keyframes(color_change) {
+  0% { 
+    background-color: #7eebe9;
+  }
+  20% {
+    background-color: #a1eb7e;
+  }
+  40% {
+    background-color: #ebe27e;
+  }
+  60% { 
+    background-color: #eb7e7e;
+  }
+  80% {
+    background-color: #eb7ead;
+  }
+  100% {
+    background-color: #7eebe9;
+  }
+}
+
+.bubble {
+  background-color: rgba($bubble-color, 1);
+  position: absolute;
+  bottom: -35px;
+  left: 35px;
+  @include size(50);
+  border-radius: 50%;
+  @include animation-iteration-count(infinite);
+  @include animation-timing-function(linear);
+}
+
+.bubble1 {
+  @include size(90);
+  bottom: -75px;
+  left: 5px;
+  @include animation-name(mother_bubble);
+  @include animation-duration(23s);
+}
+
+.bubble2 {
+  @include size(70);
+  bottom: -55px;
+  left: 55px;
+  @include animation-name(mother_bubble);
+  @include animation-duration(14s);
+}
+
+.bubble3 {
+  @include size(32);
+  bottom: -30px;
+  left: 35px;
+  @include animation-name(baby_bubble);
+  @include animation-duration(38s);
+}
+
+.bubble4 {
+  @include size(25);
+  bottom: -30px;
+  left: 75px;
+  @include animation-name(baby_bubble);
+  @include animation-duration(50s);
+}
+
+.bubble5 {
+  @include size(19);
+  left: 75px;
+  top: 10px;
+  @include animation-name(top_bubble);
+  @include animation-duration(30s);
+}
+
+.bubble6 {
+  @include size(27);
+  top: -20px;
+  left: 35px;
+  @include animation-name(top_bubble);
+  @include animation-duration(25s);
+}
+
+.bubble7 {
+  @include size(23);
+  top: -15px;
+  left: 35px;
+  @include animation-name(top_bubble);
+  @include animation-duration(37s);
+}
+
+
+@include keyframes(mother_bubble) {
+  50% {
+    @include transform(translateY(-5px) translateX(-10px) scale(1.1) scaleX(.5));
+  }
+  100% {
+    @include transform(translateY(0px));
+  }
+}
+
+@include keyframes(baby_bubble) {
+  25% {
+    @include transform(translateY(-50px) translateX(-15px) scaleX(1.2));
+  }
+  50% {
+    @include transform(translateY(-120px) translateX(-7px) scale(1.1) scaleX(.9));
+  }
+  100% {
+    @include transform(translateY(0px) scaleX(.7));
+  }
+}
+
+@include keyframes(top_bubble) {
+  25% {
+    @include transform(translateY(50px) translateX(-15px) scaleX(1.2));
+  }
+  50% {
+    @include transform(translateY(180px) translateX(13px) scaleX(.9));
+  }
+  100% {
+    @include transform(translateY(0px) scaleX(.7));
+  }
+}
+
+.navbar {
+  width: 500px;
+  float: right;
+  text-align: center;
+}
