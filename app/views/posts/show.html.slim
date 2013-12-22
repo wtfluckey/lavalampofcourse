@@ -10,57 +10,18 @@
         a href="/" Home
         a href="about" About
         a href="posts" Blog
-        a href="contact" Contact
+        a href="/contact" Contact
         .nav-underline
 
   section.about
     .wrapper
       .container
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="lavalamp">
-  <div class="lavalamp_outer">
-  </div>
-  <div class="lavalamp_inner">
-    <div class="bubble bubble1">
-    </div>
-    <div class="bubble bubble2">
-    </div>
-    <div class="bubble bubble3">
-    </div>
-    <div class="bubble bubble4">
-    </div>
-    <div class="bubble bubble5">
-    </div>
-    <div class="bubble bubble6">
-    </div>
-    <div class="bubble bubble7">
-    </div>
-  </div>
-</div> -->
-
+        .post
+          h3= @post.title
+          p= @post.body
+        .links
+          a href=edit_post_path(@post) Edit  |  
+          a href=posts_path Back  |  
+          / delete link here
+          /<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>*/
+          a Delete

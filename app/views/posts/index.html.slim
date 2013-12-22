@@ -16,51 +16,15 @@
   section.about
     .wrapper
       .container
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="lavalamp">
-  <div class="lavalamp_outer">
-  </div>
-  <div class="lavalamp_inner">
-    <div class="bubble bubble1">
-    </div>
-    <div class="bubble bubble2">
-    </div>
-    <div class="bubble bubble3">
-    </div>
-    <div class="bubble bubble4">
-    </div>
-    <div class="bubble bubble5">
-    </div>
-    <div class="bubble bubble6">
-    </div>
-    <div class="bubble bubble7">
-    </div>
-  </div>
-</div> -->
+        .posts
+          h1 Posts
+          - @posts.each do |post|
+            .post
+              h3: a href=post_path(post)
+                = post.title
+              p= post.body
+        .link
+          / should add some sort of authorization here
+          a href=new_post_path
+            p New Post
 
